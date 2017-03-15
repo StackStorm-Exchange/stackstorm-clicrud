@@ -13,3 +13,8 @@ parameters:
     type: string
     description: Command for the operation 'show'
     required: true
+  environment:
+    type: string
+    required: true
+    description: What pre-configured credentials to use
+    default: "default"

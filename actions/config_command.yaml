@@ -18,3 +18,8 @@ parameters:
     type: boolean
     required: false
     description: If true, config will be saved. False, it will not.
+  environment:
+    type: string
+    required: false
+    description: What pre-configured credentials to use
+    default: "default"
