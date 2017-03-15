@@ -19,11 +19,11 @@ Allows you to run an operational command on a Brocade ICX, MLX or VDX using CLI.
 Allows you to run a comma separated LIST of configuration commands. The real world rarely leads to running a single command so this action allows you to create a list of them which will be pushed. This could also mean a comma separated template, with the comma allowing each input to be treated as a line.
 
 
-####CLICRUD
+#### CLICRUD
 
 If you are not familiar with CLICRUD, check out http://github.com/davidjohngee/clicrud for the latest or install using PyPi:
 
-####Version 0.3.00 Update
+#### Version 0.3.00 Update
 With version 0.3.00 of this pack and version 0.3.00 of CLICRUD, it is possible to use different pre-configured credentials for different environments.
 It is also possible to use base64 encoded passwords and enable passwords.
 
@@ -35,7 +35,7 @@ pip install clicrud
 
 This dependency will automatically be installed on ST2/BWC so don't worry about that! You do not have to install this to get the clicrudST2 integration working.
 
-####Configuration file/s
+#### Configuration file/s
 
 `clicrud.yaml`
 
