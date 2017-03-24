@@ -73,7 +73,8 @@ class BaseConfig(Action):
             if 'b64password' in group_config:
                 if group_config['b64password'] is not None:
                     self.b64password = group_config['b64password']
-                    self.b64password = self.b64password.encode('utf-8', 'ignore')
+                    self.b64password = self.b64password.encode('utf-8',
+                                                               'ignore')
                 else:
                     self.b64password = ""
             else:
