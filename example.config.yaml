@@ -1,0 +1,12 @@
+---
+environment:
+  default:
+    method: "telnet"
+    username: "admin"
+    password: "password"
+    enable: "password"
+  icx:
+    method: "telnet"
+    username: "admin"
+    b64password: "cGFzc3dvcmQ="
+    enable: "password"

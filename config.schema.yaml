@@ -1,27 +1,85 @@
----
-  username:
-    description: "Username used to authenticate."
-    type: "string"
-    secret: false
-    required: true
-    default: "admin"
-  password:
-    description: "Password used to authenticate."
-    type: "string"
-    secret: true
-    required: true
-  enable:
-    description: "Enable password."
-    type: "string"
-    secret: true
-    required: true
-    default: "password"
-  method:
-    description: "Connection method."
-    type: "string"
-    secret: false
-    default: "ssh"
-    enum:
-      - "ssh"
-      - "telnet"
-    required: true
+
+      required:red: true
+  properties:
+    default:
+      type: "object"
+      properties:
+        username:
+          description: "Username used to authenticate."
+          type: "string"
+          secret: false
+          required: true
+          default: "admin"
+        password:
+          description: "Password used to authenticate."
+          type: "string"
+          secret: true
+          required: false
+        enable:
+          description: "Enable password."
+          type: "string"
+          secret: true
+          required: false
+          default: "password"
+        b64password:
+          description: "Password used to authenticate base64d."
+          type: "string"
+          secret: true
+          required: false
+        b64enable:
+          description: "Enable password base64d."
+          type: "string"
+          secret: true
+          required: false
+        method:
+          description: "Connection method."
+          type: "string"
+          secret: false
+          default: "ssh"
+          enum:
+            - "ssh"
+            - "telnet"
+          required: truei---
+environment:
+  type: "object"
+  required: true
+  properties:
+    default:
+      type: "object"
+      properties:
+        username:
+          description: "Username used to authenticate."
+          type: "string"
+          secret: false
+          required: true
+          default: "admin"
+        password:
+          description: "Password used to authenticate."
+          type: "string"
+          secret: true
+          required: false
+        enable:
+          description: "Enable password."
+          type: "string"
+          secret: true
+          required: false
+          default: "password"
+        b64password:
+          description: "Password used to authenticate base64d."
+          type: "string"
+          secret: true
+          required: false
+        b64enable:
+          description: "Enable password base64d."
+          type: "string"
+          secret: true
+          required: false
+        method:
+          description: "Connection method."
+          type: "string"
+          secret: false
+          default: "ssh"
+          enum:
+            - "ssh"
+            - "telnet"
+          required: true
