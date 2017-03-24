@@ -19,7 +19,10 @@ CONFIG_ITEMS = ['username', 'method']
 
 
 class BaseConfig(Action):
+    """This class loads the correct config environment for the run."""
+
     def __init__(self, config):
+        """Constructor for  checking the environment."""
         super(BaseConfig, self).__init__(config)
         if config is None:
             raise ValueError("No connection configuration details found")
@@ -78,7 +81,6 @@ class BaseConfig(Action):
                 self.b64enable = self.b64enable.encode('utf-8', 'ignore')
             else:
                 self.b64enable = ""
-
 
         except Exception as e:
             raise Exception(e)

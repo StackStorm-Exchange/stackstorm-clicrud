@@ -17,10 +17,12 @@ from base.actions import BaseConfig
 from clicrud.device.generic import generic
 import sys
 
+
 class ConfigCommand(BaseConfig):
+    """ConfigCommand is the ST2 way of running config via CLICRUD."""
 
     def run(self, environment, host, command, save):
-
+        """Run() is called for the action to be executed."""
         self._set_config(environment)
 
         utf8_host = host.encode('utf-8', 'ignore')

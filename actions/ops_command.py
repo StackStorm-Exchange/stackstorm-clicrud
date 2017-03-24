@@ -17,10 +17,12 @@ import sys
 from clicrud.device.generic import generic
 from base.actions import BaseConfig
 
+
 class OPSCommand(BaseConfig):
+    """OpsCommand is the ST2 way of running op commands via CLICRUD."""
 
     def run(self, environment, host, command):
-
+        """Run() is called for the action to be executed."""
         self._set_config(environment)
 
         utf8_command = command.encode('utf-8', 'ignore')
@@ -56,7 +58,6 @@ class OPSCommand(BaseConfig):
                                     method=self.method,
                                     password=self.password,
                                     enable=self.enable)
-
 
             return_value = transport.read(utf8_command, return_type="string")
             return_value = unicode(return_value, "utf-8")
