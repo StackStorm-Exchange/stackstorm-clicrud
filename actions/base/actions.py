@@ -1,4 +1,7 @@
-            opyright 2017 Brocade Communications Systems, Inc.
+# encoding: utf-8
+
+"""
+Copyright 2017 Brocade Communications Systems, Inc.
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
@@ -70,7 +73,8 @@ class BaseConfig(Action):
             if 'b64password' in group_config:
                 if group_config['b64password'] is not None:
                     self.b64password = group_config['b64password']
-                    self.b64password = self.b64password.encode('utf-8', 'ignore')
+                    self.b64password = self.b64password.encode('utf-8',
+                                                               'ignore')
                 else:
                     self.b64password = ""
             else:
