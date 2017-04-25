@@ -43,3 +43,8 @@ environment:
             - "ssh"
             - "telnet"
           required: true
+        port:
+          description: "Override the port number for Telnet or SSH."
+          type: "integer"
+          secret: false
+          required: false
