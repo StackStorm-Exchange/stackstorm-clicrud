@@ -45,6 +45,7 @@ Currently the connectivity method is also in the configuration file. This in the
 
 You can create the configuration manually or use the 'st2 pack config' command to generate it.
 
+Note, port is entirely optional. It's added here as an example of overriding.
 
 ```
   ---
@@ -54,11 +55,13 @@ You can create the configuration manually or use the 'st2 pack config' command t
       method:   "ssh"
       password: "password"
       enable:   "password"
+      port: 22
     icx:
       username: "admin"
       method:   "telnet"
       b64password: "B64ENCODEDSTRING"
       b64enable: "B64ENCODEDSTRING"
+      port: 7045
 ```
 
 It is possible to swap out password/b64password and enable/b64enable.

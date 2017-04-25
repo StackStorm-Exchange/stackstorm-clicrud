@@ -36,28 +36,32 @@ class OPSCommand(BaseConfig):
                                     username=self.username,
                                     method=self.method,
                                     b64password=self.b64password,
-                                    b64enable=self.b64enable)
+                                    b64enable=self.b64enable,
+                                    port=self.port)
 
             if self.b64enable != "":
                 transport = generic(host=utf8_host,
                                     username=self.username,
                                     method=self.method,
                                     password=self.password,
-                                    b64enable=self.b64enable)
+                                    b64enable=self.b64enable,
+                                    port=self.port)
 
             if self.b64password != "":
                 transport = generic(host=utf8_host,
                                     username=self.username,
                                     method=self.method,
                                     enable=self.enable,
-                                    b64password=self.b64password)
+                                    b64password=self.b64password,
+                                    port=self.port)
 
             if self.b64enable == "" and self.b64password == "":
                 transport = generic(host=utf8_host,
                                     username=self.username,
                                     method=self.method,
                                     password=self.password,
-                                    enable=self.enable)
+                                    enable=self.enable,
+                                    port=self.port)
 
             return_value = transport.read(utf8_command, return_type="string")
             return_value = unicode(return_value, "utf-8")
