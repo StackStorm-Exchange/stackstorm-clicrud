@@ -86,7 +86,7 @@ class BaseConfig(Action):
             else:
                 self.b64enable = ""
 
-            if 'port' in group_config and group_config['port'] is not None:
+            if 'port' in group_config:
                 self.port = group_config['port']
             else:
                 self.port = None
