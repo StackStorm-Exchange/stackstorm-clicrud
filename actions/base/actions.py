@@ -58,42 +58,36 @@ class BaseConfig(Action):
             self.username = group_config['username']
             self.username = self.username.encode('utf-8', 'ignore')
 
-            if 'password' in group_config:
-                self.password = group_config['password']
-                self.password = self.password.encode('utf-8', 'ignore')
+            if 'password' in group_config and \
+               group_config['password'] is not None:
+                    self.password = group_config['password']
+                    self.password = self.password.encode('utf-8', 'ignore')
             else:
                 self.password = ""
 
-            if 'enable' in group_config:
+            if 'enable' in group_config and group_config['enable'] is not None:
                 self.enable = group_config['enable']
                 self.enable = self.enable.encode('utf-8', 'ignore')
             else:
                 self.enable = ""
 
-            if 'b64password' in group_config:
-                if group_config['b64password'] is not None:
+            if 'b64password' in group_config and \
+               group_config['b64password'] is not None:
                     self.b64password = group_config['b64password']
                     self.b64password = self.b64password.encode('utf-8',
                                                                'ignore')
-                else:
-                    self.b64password = ""
             else:
                 self.b64password = ""
 
-            if 'b64enable' in group_config:
-                if group_config['b64enable'] is not None:
+            if 'b64enable' in group_config and \
+               group_config['b64enable'] is not None:
                     self.b64enable = group_config['b64enable']
                     self.b64enable = self.b64enable.encode('utf-8', 'ignore')
-                else:
-                    self.b64enable = ""
             else:
                 self.b64enable = ""
 
-            if 'port' in group_config:
-                if group_config['port'] is not None:
-                    self.port = group_config['port']
-                else:
-                    self.port = None
+            if 'port' in group_config and group_config['port'] is not None:
+                self.port = group_config['port']
             else:
                 self.port = None
 
