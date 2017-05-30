@@ -31,37 +31,26 @@ class OPSCommand(BaseConfig):
         transport = None
 
         try:
-            if self.b64password != "" and self.b64enable != "":
-                transport = generic(host=utf8_host,
-                                    username=self.username,
-                                    method=self.method,
-                                    b64password=self.b64password,
-                                    b64enable=self.b64enable,
-                                    port=self.port)
+            params = {}
 
-            if self.b64enable != "":
-                transport = generic(host=utf8_host,
-                                    username=self.username,
-                                    method=self.method,
-                                    password=self.password,
-                                    b64enable=self.b64enable,
-                                    port=self.port)
+            params['host'] = utf8_host
+            params['username'] = self.username
+            params['method'] = self.method
+            params['port'] = self.port
 
             if self.b64password != "":
-                transport = generic(host=utf8_host,
-                                    username=self.username,
-                                    method=self.method,
-                                    enable=self.enable,
-                                    b64password=self.b64password,
-                                    port=self.port)
+                params['b64password'] = self.b64password
 
-            if self.b64enable == "" and self.b64password == "":
-                transport = generic(host=utf8_host,
-                                    username=self.username,
-                                    method=self.method,
-                                    password=self.password,
-                                    enable=self.enable,
-                                    port=self.port)
+            if self.b64enable != "":
+                params['b64enable'] = self.b64enable
+
+            if 'b64password' not in params and self.password != "":
+                params['password'] = self.password
+
+            if 'b64enable' not in params and self.enable != "":
+                params['enable'] = self.enable
+
+            transport = generic(**params)
 
             return_value = transport.read(utf8_command, return_type="string")
             return_value = unicode(return_value, "utf-8")
@@ -72,6 +61,6 @@ class OPSCommand(BaseConfig):
             return return_value
 
         except Exception, err:
-            self.logger.info('OPSCommand threw an exception')
+            self.logger.info('OPSCommand threw an exception:')
             self.logger.info(err)
             sys.exit(2)

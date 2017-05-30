@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.3.1
+- Updated logic around passwords/enable secrets to accommodate systems that auto enable, and need no enable configurations
+- Fixed some issues with empty fields in configuration
+
 # 0.3.0
 
 - Added full complement of 0.3.0 features
