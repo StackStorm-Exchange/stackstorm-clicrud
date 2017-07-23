@@ -1,6 +1,11 @@
 # Change Log
 
+# 0.3.2
+
+- Moved example config file to `clicrud.yaml.example`, so that tests check schema validity
+
 # 0.3.1
+
 - Updated logic around passwords/enable secrets to accommodate systems that auto enable, and need no enable configurations
 - Fixed some issues with empty fields in configuration
 

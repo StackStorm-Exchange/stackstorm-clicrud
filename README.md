@@ -1,53 +1,41 @@
-## Readme
+# CLICRUD Integration Pack
 
-This pack allows you to use CLICRUD effectively within StackStorm or the Brocade Workflow Composer.
+This pack allows you to use [CLICRUD](https://github.com/DavidJohnGee/clicrud/) with StackStorm or Brocade Workflow Composer.
 
+It can be used to run CLI commands against Brocade vRouter, ICX, MLX and VDX devices.
 
-This pack contains two actions below. The 'ops_command' allows you to run show commands and operational commands. 'config_command' allows you to list a set of configuration commands.
+This pack contains two actions:
 
-```text
-- ops_command
-- config_command
-```
+* `ops_command` - run 'show' commands and operational commands
+* `config_command` - run a list of configuration commands - see more below
 
-####ops_command
-
-Allows you to run an operational command on a Brocade ICX, MLX or VDX using CLI.
-
-####config_command
+### config\_command
 
 Allows you to run a comma separated LIST of configuration commands. The real world rarely leads to running a single command so this action allows you to create a list of them which will be pushed. This could also mean a comma separated template, with the comma allowing each input to be treated as a line.
 
-
-#### CLICRUD
+## CLICRUD
 
 If you are not familiar with CLICRUD, check out http://github.com/davidjohngee/clicrud for the latest or install using PyPi:
-
-#### Version 0.3.00 Update
-With version 0.3.00 of this pack and version 0.3.00 of CLICRUD, it is possible to use different pre-configured credentials for different environments.
-It is also possible to use base64 encoded passwords and enable passwords.
-
-Finally, the Brocade vRouter is now also supported.
 
 ```bash
 pip install clicrud
 ```
 
-This dependency will automatically be installed on ST2/BWC so don't worry about that! You do not have to install this to get the clicrudST2 integration working.
+(NB This is automatically installed on StackStorm if you install this pack)
 
-#### Configuration file/s
+### Version 0.3.00 Update
 
-`clicrud.yaml`
+With version 0.3.00 of this pack and version 0.3.00 of CLICRUD, it is possible to use different pre-configured credentials for different environments.
 
-This file hides the connectivity method and credentials from the actual composer itself. This is to limit what can change in the workflows/rules.
+It is also possible to use base64 encoded passwords and enable passwords.
 
-Currently the connectivity method is also in the configuration file. This in the future may change. Everyone uses SSH right? (Just nod).
+Finally, the Brocade vRouter is now also supported.
 
-You can create the configuration manually or use the 'st2 pack config' command to generate it.
+## Configuration
 
-Note, port is entirely optional. It's added here as an example of overriding.
+Copy `clicrud.yaml.example` to `/opt/stackstorm/configs/clicrud.yaml`
 
-```
+```yaml
   ---
   environment:
     default:  
@@ -64,5 +52,14 @@ Note, port is entirely optional. It's added here as an example of overriding.
       port: 7045
 ```
 
+You can specify groups of configurations, as shown above. When running commands, you can specify the config group to use,
+or it will use the `default` settings.
+
+NB: `port:` is optional. It will use `22` by default for SSH, or `23` for Telnet. It is shown here as an example of over-riding
+the defaults
+
 It is possible to swap out password/b64password and enable/b64enable.
+
 You can also use dynamic datastore values.
+
+After modifying the configuration, tell StackStorm to load it into the database with `sudo st2ctl reload --register-configs`
