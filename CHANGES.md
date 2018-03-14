@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.3.3
+
+- Changed logo to Extreme
+
 # 0.3.2
 
 - Moved example config file to `clicrud.yaml.example`, so that tests check schema validity

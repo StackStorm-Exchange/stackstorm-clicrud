@@ -1,8 +1,8 @@
 # CLICRUD Integration Pack
 
-This pack allows you to use [CLICRUD](https://github.com/DavidJohnGee/clicrud/) with StackStorm or Brocade Workflow Composer.
+This pack allows you to use [CLICRUD](https://github.com/DavidJohnGee/clicrud/) with StackStorm or Extreme Workflow Composer.
 
-It can be used to run CLI commands against Brocade vRouter, ICX, MLX and VDX devices.
+It can be used to run CLI commands against Extreme MLX and VDX devices, Arris ICX switches, and vRouter.
 
 This pack contains two actions:
 
@@ -29,7 +29,7 @@ With version 0.3.00 of this pack and version 0.3.00 of CLICRUD, it is possible t
 
 It is also possible to use base64 encoded passwords and enable passwords.
 
-Finally, the Brocade vRouter is now also supported.
+Finally, the vRouter is now also supported.
 
 ## Configuration
 
