@@ -60,7 +60,7 @@ class OPSCommand(BaseConfig):
 
             return return_value
 
-        except Exception, err:
+        except Exception as err:
             self.logger.info('OPSCommand threw an exception:')
             self.logger.info(err)
             sys.exit(2)
