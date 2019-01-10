@@ -15,6 +15,5 @@ python_versions:
   # NOTE: multiprocessing library clicrud depends on doesn't
   # seem to work with Python 3
   - "2"
-  - "3"
 author : davidjohngee
 email : david.gee@ipengineer.net
