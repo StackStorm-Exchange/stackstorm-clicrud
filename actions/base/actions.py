@@ -58,10 +58,9 @@ class BaseConfig(Action):
             self.username = group_config['username']
             self.username = self.username.encode('utf-8', 'ignore')
 
-            if 'password' in group_config and \
-               group_config['password'] is not None:
-                    self.password = group_config['password']
-                    self.password = self.password.encode('utf-8', 'ignore')
+            if 'password' in group_config and group_config['password'] is not None:
+                self.password = group_config['password']
+                self.password = self.password.encode('utf-8', 'ignore')
             else:
                 self.password = ""
 
@@ -73,16 +72,14 @@ class BaseConfig(Action):
 
             if 'b64password' in group_config and \
                group_config['b64password'] is not None:
-                    self.b64password = group_config['b64password']
-                    self.b64password = self.b64password.encode('utf-8',
-                                                               'ignore')
+                self.b64password = group_config['b64password']
+                self.b64password = self.b64password.encode('utf-8', 'ignore')
             else:
                 self.b64password = ""
 
-            if 'b64enable' in group_config and \
-               group_config['b64enable'] is not None:
-                    self.b64enable = group_config['b64enable']
-                    self.b64enable = self.b64enable.encode('utf-8', 'ignore')
+            if 'b64enable' in group_config and group_config['b64enable'] is not None:
+                self.b64enable = group_config['b64enable']
+                self.b64enable = self.b64enable.encode('utf-8', 'ignore')
             else:
                 self.b64enable = ""
 

@@ -10,7 +10,7 @@ keywords :
   - clicrud
   - vrouter
   - vyatta
-version: 0.3.3
+version: 0.3.4
 python_versions:
   # NOTE: multiprocessing library clicrud depends on doesn't
   # seem to work with Python 3

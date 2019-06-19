@@ -1,5 +1,9 @@
 # Change Log
 
+# 0.3.4
+
+- Minor linting fix
+
 # 0.3.3
 
 - Changed logo to Extreme
