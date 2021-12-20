@@ -37,7 +37,6 @@ jobs:
         uses: StackStorm-Exchange/ci/.github/actions/test@gha
         with:
           enable-common-libs: false
-          python-version-short: ${{ matrix.python-version-short }}
 
     services:
       mongo:
