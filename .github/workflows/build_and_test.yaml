@@ -21,8 +21,9 @@ jobs:
       - name: test gha
         shell: bash
         run: |
-          echo "PACK_PYTHON_VERSIONS=$(${CI_DIR}/utils/extract_from_yaml.py pack.yaml python_versions)"
+          echo ${{ matrix.python-version-short }}
           echo ${{ matrix.python-version-short[0] }}
+          echo ${{ matrix.python-version-short }} | jq '.[0]'
 
       - name: Checkout Pack Repo and CI Repos
         uses: StackStorm-Exchange/ci/.github/actions/checkout@gha
